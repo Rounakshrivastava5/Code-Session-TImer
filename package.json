@@ -1,0 +1,54 @@
+{
+  "name": "code-session-timer",
+  "displayName": "Code Session Timer",
+  "description": "Track coding sessions, activity, and receive break reminders",
+  "version": "0.1.0",
+  "publisher": "your-publisher",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "timer",
+    "productivity",
+    "session",
+    "break reminder",
+    "coding activity"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:codeSessionTimer.showHistory"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codeSessionTimer.showHistory",
+        "title": "Session Timer: Show History"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node esbuild.config.js --production",
+    "watch": "node esbuild.config.js --watch",
+    "lint": "eslint src --ext ts",
+    "pretest": "npm run build",
+    "vscode:prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "esbuild": "^0.20.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-repo/code-session-timer"
+  }
+}
